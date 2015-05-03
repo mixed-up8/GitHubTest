@@ -9,6 +9,9 @@
 <h1>プログラム実行テスト</h1>
 <script>
 var n = 0;
+var t = "A";
+var today = new Date();
+var zero = /:[0-9]0/;
 var company = {
   name: 'aaa',
   address: {
@@ -16,6 +19,7 @@ var company = {
    city: 'Tokyo'
   }
 };
+ymd = today.toLocaleString();
 company.address.yomi = 'トウキョウ';
 
 //window.alert('Hello, world!' + company.name + company.address.yomi);
@@ -26,9 +30,15 @@ if(n == 3) {
 }
 function circle(r) {
   var s = r * r * 3.14;
+  var t = "B";
   return s;
 }
-window.alert('r = ' + n + '  ' + circle(n));
+window.alert('r = ' + n + '  ' + circle(n) + '\n' + t + ' ' + ymd);
+window.alert(window.location.href);
+if(zero.test(ymd)) {
+  window.alert('ymd');
+  window.location.href = 'http://www.yahoo.co.jp/';
+}
 </script>
 </body>
 </html>
